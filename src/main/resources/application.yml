@@ -1,0 +1,41 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /SGCT
+spring:
+  profiles:
+    active: 'prod'
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create-drop
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mariadb://192.168.1.145:3306/prueba
+    username: admin
+    password: password
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mariadb://miServidorMariaDb.com:3306/prueba
+    username: admin
+    password: tiger
+
+
+
