@@ -27,7 +27,10 @@ public class Enfermedad implements Serializable {
 //
 	@Column(name = "enfermedad", nullable = false, length = 50, unique = true)
 	private String enfermedad;
-   
+
+	@Column(name = "eliminado", nullable = false)
+	private boolean eliminado;
+
 	@OneToMany(mappedBy="enfermedadV")
 	private List<Enfermedad_R_Variante> enfermedades_variantes;
 	

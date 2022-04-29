@@ -26,6 +26,9 @@ public class Variante_Enfermedad implements Serializable {
 
 	@Column(name = "variante_enfermedad", nullable = false, length = 50, unique = true)
 	private String variante_enfermedad;
+
+	@Column(name = "eliminado", nullable = false)
+	private boolean eliminado;
 	
 	@OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL,mappedBy="varianteV")
 	private List<Enfermedad_R_Variante> enfermedades_variantes;

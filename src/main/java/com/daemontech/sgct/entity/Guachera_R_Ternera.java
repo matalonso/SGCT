@@ -40,6 +40,9 @@ public class Guachera_R_Ternera implements Serializable {
 	@JoinColumn(name = "id_guachera", referencedColumnName = "id_guachera", insertable = false, updatable = false)
 	private Guachera guachera;
 
+	@Column(name = "eliminado", nullable = false)
+	private boolean eliminado;
+
 
 
 }

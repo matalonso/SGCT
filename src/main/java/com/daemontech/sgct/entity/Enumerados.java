@@ -58,5 +58,18 @@ public class Enumerados {
         CUATRO
     }
 
+    public enum Motivo_Baja_Ternera {
+        VENTA,
+        MUERTE,
+        EXTRAVIO,
+        ROBO
+    }
+
+    public enum Unidad_Alimento {
+        KG,
+        L,
+        G,
+        ML
+    }
 
 }

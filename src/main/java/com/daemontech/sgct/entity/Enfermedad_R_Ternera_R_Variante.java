@@ -42,6 +42,9 @@ public class Enfermedad_R_Ternera_R_Variante implements Serializable {
     @Enumerated(EnumType.STRING)
     private Enumerados.Motivo_Baja_Enfermedad motivo_baja_enfermedad;
 
+    @Column(name = "eliminado", nullable = false)
+    private boolean eliminado;
+
     @ManyToOne
     @JoinColumn(name = "id_ternera", referencedColumnName = "id_ternera", insertable = false, updatable = false)
     private Ternera terneraVT;

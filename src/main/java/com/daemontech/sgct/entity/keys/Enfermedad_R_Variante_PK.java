@@ -23,6 +23,9 @@ public class Enfermedad_R_Variante_PK implements Serializable {
 	@Column(name = "id_Variante_Enfermedad")
 	private Long id_Variante_Enfermedad;
 
+	@Column(name = "eliminado", nullable = false)
+	private boolean eliminado;
+
 	public Enfermedad_R_Variante_PK(Long id_Enfermedad, Long id_Variante_Enfermedad) {
 		this.id_Enfermedad = id_Enfermedad;
 		this.id_Variante_Enfermedad=id_Variante_Enfermedad;

@@ -5,6 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,10 +28,11 @@ public class Guachera implements Serializable {
 
 
 	@Column(name = "fech_alt_guach", nullable = false)
-	private LocalDate fec_alt_guach;
+	@Temporal(TemporalType.DATE)
+	private Calendar fech_alt_guach;
 
-	@Column(name = "fec_baj_guach", nullable = true)
-	private LocalDate fec_baj_guach;
+	@Column(name = "fech_baj_guach", nullable = true)
+	private Calendar fech_baj_guach;
 
 	@Column(name = "capacidad", nullable = false)
 	private int capacidad;
@@ -50,6 +52,9 @@ public class Guachera implements Serializable {
 	@Column
 	@Enumerated(EnumType.STRING)
 	private Enumerados.Tipo_Guachera tipo_guachera;
+
+	@Column(name = "eliminado", nullable = false)
+	private boolean eliminado;
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "guachera")
 	private List<Guachera_R_Ternera> GuacheraTerneras = new ArrayList<>();

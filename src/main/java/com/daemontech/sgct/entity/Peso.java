@@ -41,4 +41,7 @@ public class Peso implements Serializable {
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Ternera id_ternera;
 
+    @Column(name = "eliminado", nullable = false)
+    private boolean eliminado;
+
 }

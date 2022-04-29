@@ -25,21 +25,21 @@ public class Alimento implements Serializable {
     @Column(name = "id_alimento")
     private Integer id_alimento;
 
-    @JoinColumn(name = "FK_ALIMENTO_NOMBRE_ALIMENTO", nullable = false)
+    @JoinColumn(name = "fk_nombre_alimento", nullable = false)
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Nombre_Alimento nombreAlimento;
 
-    @JoinColumn(name = "FK_ALIMENTO_UNIDAD_ALIMENTO", nullable = false)
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Unidad_Alimento unidadAlimento;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Enumerados.Unidad_Alimento unidad_alimento;
 
-    @Column(name = "MARCA_ALIMENTO", nullable = false, length = 50, unique = false)
-    private String marcaAlimento;
+    @Column(name = "marca_alimento", nullable = false, length = 50, unique = false)
+    private String marca_alimento;
 
-    @Column(name = "STOCK_MINIMO_ALIMENTO", nullable = false, length = 50, unique = false)
-    private Integer Stock_Min_Alimento;
+    @Column(name = "stock_minimo_alimento",nullable = false, length = 50, unique = false)
+    private Integer stock_min_alimento;
 
-    @Column(name = "ELIMINADO", nullable = false)
+    @Column(name = "eliminado", nullable = false)
     private boolean eliminado;
 
 
