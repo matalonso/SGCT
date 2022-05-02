@@ -25,6 +25,5 @@ public class Enfermedad_R_Ternera_R_Variante_PK implements Serializable {
     @Column(name = "fec_inic_enf")
     private LocalDate fec_inic_enf;
 
-    @Column(name = "eliminado", nullable = false)
-    private boolean eliminado;
+
 }

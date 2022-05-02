@@ -24,7 +24,7 @@ logging:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mariadb://192.168.1.145:3306/prueba
+    url: jdbc:mariadb://192.168.1.14:3306/prueba
     username: admin
     password: password
 

@@ -14,7 +14,7 @@ class TerneraRest {
 	@Autowired
 	private TerneraService terneraService;
 
-	@PostMapping("/Guardar") //localhost:puerto/personas/Guardar
+	@PostMapping("/Guardar")
 	public void Guardar(@RequestBody Ternera ternera) {
 		terneraService.guardar(ternera);
 

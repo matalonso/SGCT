@@ -2,11 +2,8 @@ package com.daemontech.sgct.entity;
 
 import com.daemontech.sgct.entity.keys.Enfermedad_R_Ternera_R_Variante_PK;
 import lombok.Data;
-
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
-
 import javax.persistence.*;
 
 /**
@@ -34,8 +31,8 @@ public class Enfermedad_R_Ternera_R_Variante implements Serializable {
     @Column(name = "fc_fin_enfe", nullable = false)
     private LocalDate fc_fin_enfe;
 
-	@Column(name = "severidad",nullable = false)
-	@Enumerated(EnumType.ORDINAL) // ordinal porque pide numerico
+    @Column(name = "severidad", nullable = false)
+    @Enumerated(EnumType.ORDINAL) // ordinal porque pide numerico
     private Enumerados.Severidad_Enfermedad severidad_enfermedad;
 
     @Column
@@ -56,10 +53,5 @@ public class Enfermedad_R_Ternera_R_Variante implements Serializable {
     @JoinColumn(name = "id_variante_enfermedad", referencedColumnName = "id_variante_enfermedad", insertable = false, updatable = false)
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Variante_Enfermedad varianteVT;
-
-
-
-
-
-
 }
+
